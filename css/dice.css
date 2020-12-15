@@ -9,6 +9,7 @@
     background-color: #282e38;
     padding-bottom: 60px;
     overflow-x: hidden;
+    position: absolute;
 }
 
 .card-box {
