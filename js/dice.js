@@ -607,6 +607,8 @@ function roll_40k() {
     var wound_of_6 = fetch_value('wound_of_6');
     var save_stat = fetch_int_value('save');
     var invuln_stat = fetch_int_value('invulnerable');
+    if (invlun_stat == 0)
+        invuln_stat = null;
     var ap_val = fetch_int_value('ap');
     var save_mod = fetch_int_value('save_mod');
     var cover = is_checked('cover');
@@ -775,7 +777,6 @@ function dice_sum_prob_array(value) {
     var die_faces = [];
     die_faces[0] = 0;
     for (var i = 1; i <= sides; i++) {
-        console.log
         die_faces[i + surplus] = 1.0 / sides;
     }
 
