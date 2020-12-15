@@ -608,7 +608,7 @@ function roll_40k() {
     var save_stat = fetch_int_value('save');
     var invuln_stat = fetch_int_value('invulnerable');
     if (invuln_stat == 0)
-        invuln_stat = parseInt('NaN', 10);;
+        invuln_stat = NaN;
     var ap_val = fetch_int_value('ap');
     var save_mod = fetch_int_value('save_mod');
     var cover = is_checked('cover');
