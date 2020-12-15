@@ -607,8 +607,8 @@ function roll_40k() {
     var wound_of_6 = fetch_value('wound_of_6');
     var save_stat = fetch_int_value('save');
     var invuln_stat = fetch_int_value('invulnerable');
-    if (invlun_stat == 0)
-        invuln_stat = NaN;
+    if (invuln_stat == 0)
+        invuln_stat = parseInt('NaN', 10);;
     var ap_val = fetch_int_value('ap');
     var save_mod = fetch_int_value('save_mod');
     var cover = is_checked('cover');
