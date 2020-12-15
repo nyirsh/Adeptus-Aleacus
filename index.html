@@ -252,25 +252,25 @@
         $("input[is-spinner='true']").TouchSpin({
             min: 1,
             max: 99,
-            stepinterval: 1,
+            step: 1,
         });
 
         $("input[is-zero-spinner='true']").TouchSpin({
             min: 0,
             max: 99,
-            stepinterval: 1,
+            step: 1,
         });
 
         $("input[is-free-spinner='true']").TouchSpin({
             min: -99,
             max: 99,
-            stepinterval: 1,
+            step: 1,
         });
 
         $("input[is-negative-spinner='true']").TouchSpin({
             min: -99,
             max: 0,
-            stepinterval: 1,
+            step: 1,
         });
 
         var elems = document.querySelectorAll('.js-switch');
