@@ -9,16 +9,15 @@
     background-color: #282e38;
     padding-bottom: 60px;
     overflow-x: hidden;
-    position: absolute;
 }
 
 .card-box {
     background-color: #313844;
     padding: 1.5rem;
-    -webkit-box-shadow: 0 0.75rem 6rem rgba(56,65,74,.03);
-    box-shadow: 0 0.75rem 6rem rgba(56,65,74,.03);
+    -webkit-box-shadow: 2px 3px 8px #21282f;
+    box-shadow: 2px 3px 8px #21282f;
     margin-bottom: 24px;
-    border-radius: .25rem;
+    border-radius: 3px;
 }
 
 #wrapper {
@@ -52,6 +51,8 @@
     right: 0;
     height: 70px;
     z-index: 100;
+	-webkit-box-shadow: 2px 3px 8px #21282f;
+    box-shadow: 2px 3px 8px #21282f;
 }
 
 @media (min-width:1200px) {
@@ -246,3 +247,31 @@ button, input, optgroup, select, textarea {
         -webkit-transition: all .4s;
         transition: all .4s;
     }
+	
+@media (max-width:767.98px) {
+    .footer {
+        left: 0 !important;
+        text-align: center;
+    }
+	
+	.body {
+		margin: 0;
+		font-family: Roboto,sans-serif;
+		font-size: .9rem;
+		font-weight: 400;
+		line-height: 1.5;
+		color: #adb5bd;
+		text-align: left;
+		background-color: #282e38;
+		padding-bottom: 60px;
+		overflow-x: hidden;
+		position: absolute;
+	}
+	
+	#wrapper {
+		height: 100%;
+		overflow: hidden;
+		width: 100%;
+		padding-bottom: 30px;
+	}
+}
