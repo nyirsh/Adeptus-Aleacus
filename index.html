@@ -59,15 +59,15 @@
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="bs" class="col-form-label">BS/WS</label>
-                                        <input type="text" class="form-control" id="bs" placeholder="Auto" is-spinner="true" spinner-min="0" spinner-max="99" spinner-step="1" spinner-firstvalue="0">
+                                        <input type="text" class="form-control" id="bs" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="s" class="col-form-label">Strenght</label>
-                                        <input type="text" class="form-control" id="s" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="99" spinner-step="1" spinner-firstvalue="1">
+                                        <input type="text" class="form-control" id="s" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="25" spinner-step="1" spinner-firstvalue="1">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="ap" class="col-form-label">AP</label>
-                                        <input type="text" class="form-control" id="ap" value="0" is-spinner="true" spinner-min="-99" spinner-max="0" spinner-step="1" spinner-firstvalue="0">
+                                        <input type="text" class="form-control" id="ap" value="0" is-spinner="true" spinner-min="-10" spinner-max="0" spinner-step="1" spinner-firstvalue="0">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="d" class="col-form-label">Damage</label>
@@ -77,7 +77,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-2">
                                         <label for="hit_mod" class="col-form-label">Hit Modifier</label>
-                                        <input type="text" class="form-control" id="hit_mod" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-99" spinner-max="99" spinner-step="1" spinner-firstvalue="0">
+                                        <input type="text" class="form-control" id="hit_mod" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="hit_of_6" class="col-form-label">Hit rolls of 6</label>
@@ -103,7 +103,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-2">
                                         <label for="wound_mod" class="col-form-label">Wounds Modifier</label>
-                                        <input type="text" class="form-control" id="wound_mod" placeholder="Ex: 4, 2d6" value="0" is-spinner="true" spinner-min="-99" spinner-max="99" spinner-step="1" spinner-firstvalue="0">
+                                        <input type="text" class="form-control" id="wound_mod" placeholder="Ex: 4, 2d6" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="wound_of_6" class="col-form-label">Wound rolls of 6</label>
@@ -133,25 +133,25 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-2">
                                         <label for="t" class="col-form-label">Toughness</label>
-                                        <input type="text" class="form-control" id="t" placeholder="Ex: 4, leave blank to auto-wound" value="1" is-spinner="true" spinner-min="1" spinner-max="99" spinner-step="1" spinner-firstvalue="1">
+                                        <input type="text" class="form-control" id="t" placeholder="Ex: 4, leave blank to auto-wound" value="1" is-spinner="true" spinner-min="1" spinner-max="15" spinner-step="1" spinner-firstvalue="1">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="save" class="col-form-label">Save</label>
-                                        <input type="text" class="form-control" id="save" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="99" spinner-step="1" spinner-firstvalue="1">
+                                        <input type="text" class="form-control" id="save" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="invulnerable" class="col-form-label">Invulnerable</label>
-                                        <input type="text" class="form-control" id="invulnerable" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="99" spinner-step="1" spinner-firstvalue="1">
+                                        <input type="text" class="form-control" id="invulnerable" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="wounds" class="col-form-label">Wounds</label>
-                                        <input type="text" class="form-control" id="wounds" placeholder="Ex: 1, 13, leave blank if you don't care" value="0" is-spinner="true" spinner-min="0" spinner-max="99" spinner-step="1" spinner-firstvalue="0">
+                                        <input type="text" class="form-control" id="wounds" placeholder="Ex: 1, 13, leave blank if you don't care" value="0" is-spinner="true" spinner-min="0" spinner-max="50" spinner-step="1" spinner-firstvalue="0">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-2">
                                         <label for="save_mod" class="col-form-label">Save Modifier</label>
-                                        <input type="text" class="form-control" id="save_mod" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-99" spinner-max="99" spinner-step="1" spinner-firstvalue="0">
+                                        <input type="text" class="form-control" id="save_mod" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="cover" class="col-form-label">Cover</label>
