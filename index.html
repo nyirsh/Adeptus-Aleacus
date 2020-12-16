@@ -33,7 +33,7 @@
                         </a>
                     </div>
                     <ul class="list-unstyled topnav-menu mb-0">
-                        <li class="dropdown notification-list">
+                        <li class="dropdown app-name">
                             <a class="nav-link mr-0 waves-effect" href="#">
                                 <span class="site-title">
                                     Adeptus Aleacus
@@ -137,11 +137,11 @@
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="save" class="col-form-label">Save</label>
-                                        <input type="text" class="form-control" id="save" placeholder="Ex: 4" value="1" is-spinner="true">
+                                        <input type="text" class="form-control" id="save" placeholder="Auto" is-spinner="true">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="invulnerable" class="col-form-label">Invulnerable</label>
-                                        <input type="text" class="form-control" id="invulnerable" placeholder="Ex: 4, leave blank to auto-wound" value="0" is-zero-spinner="true">
+                                        <input type="text" class="form-control" id="invulnerable" placeholder="-" is-spinner="true">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="wounds" class="col-form-label">Wounds</label>
@@ -180,10 +180,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-block btn-primary waves-effect waves-light" onclick="roll_40k()">
-                                <i class="fas fa-dice mr-1"></i>
-                                <span>Roll</span>
-                            </button>
+							<div class="col-12" style="padding-bottom: 25px">
+								<button type="button" class="btn btn-block btn-primary waves-effect waves-light" onclick="roll_40k()">
+									<i class="fas fa-dice mr-1"></i>
+									<span>Roll</span>
+								</button>
+							</div>
                         </div>
                     </div>
                     <div class="row" id="results" style="display: none;">
@@ -248,24 +250,28 @@
             min: 1,
             max: 99,
             step: 1,
+			firstclickvalueifempty: 1
         });
 
         $("input[is-zero-spinner='true']").TouchSpin({
             min: 0,
             max: 99,
             step: 1,
+			firstclickvalueifempty: 0
         });
 
         $("input[is-free-spinner='true']").TouchSpin({
             min: -99,
             max: 99,
             step: 1,
+			firstclickvalueifempty: 0
         });
 
         $("input[is-negative-spinner='true']").TouchSpin({
             min: -99,
             max: 0,
             step: 1,
+			firstclickvalueifempty: 0
         });
 
         var elems = document.querySelectorAll('.js-switch');

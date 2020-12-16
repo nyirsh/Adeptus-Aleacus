@@ -1,4 +1,3 @@
-
 function fetch_value(id) {
     var element = document.getElementById(id);
     if (element == null) {
@@ -252,9 +251,9 @@ function do_hits(hit_stat, hit_mod, hit_reroll, attacks, hit_of_6, damage_prob) 
     var hit_prob = success_chance(hit_stat, hit_mod);
     var hit_title;
     if (hit_prob.pass_chance == 1) {
-        hit_title = 'auto-hit';
+        hit_title = 'Auto-Hit';
     } else {
-        hit_title = 'hit on ' + hit_stat + '+';
+        hit_title = 'Hits on ' + hit_stat + '+';
 
         if (hit_mod) {
             var sign = '';
@@ -365,9 +364,9 @@ function calc_wound_prob(wound_stat, wound_mod, wound_reroll) {
 function do_wounds(wound_stat, wound_mod, wound_reroll, wound_prob, hit_of_6, hits, wound_of_6, damage_prob) {
     var wound_title;
     if (wound_prob.pass_chance == 1) {
-        wound_title = 'auto-wound';
+        wound_title = 'Auto-Wound';
     } else {
-        wound_title = 'wound on ' + wound_stat + '+';
+        wound_title = 'Wounds on ' + wound_stat + '+';
     }
 
     // Rerolls
@@ -426,7 +425,7 @@ function do_saves(save_stat, invuln_stat, ap_val, save_mod, cover, save_reroll, 
 
     // Normal save.
     var save_prob = success_chance(save_stat, total_save_mod);
-    var save_title = 'save of ' + save_stat + '+';
+    var save_title = 'Save on ' + save_stat + '+';
     if (total_save_mod) {
         var sign = '';
         if (total_save_mod > 0) {
@@ -435,16 +434,16 @@ function do_saves(save_stat, invuln_stat, ap_val, save_mod, cover, save_reroll, 
         save_title += ' (' + sign + total_save_mod + ')';
     }
     if (save_reroll == 'fail') {
-        save_title += ', reroll failures';
+        save_title += ', Reroll Failures';
         save_prob = reroll(save_prob);
     } else if (save_reroll == '1') {
-        save_title += ', reroll 1s';
+        save_title += ', Reroll 1s';
         save_prob = reroll_1(save_prob);
     }
 
     // Invulnerable save; ignores AP and cover, but includes other modifiers.
     var invuln_prob = success_chance(invuln_stat, save_mod);
-    var invuln_title = 'save of ' + invuln_stat + '++';
+    var invuln_title = 'Save on ' + invuln_stat + ' Invulnerable';
     if (save_mod) {
         var sign = '';
         if (save_mod > 0) {
@@ -453,10 +452,10 @@ function do_saves(save_stat, invuln_stat, ap_val, save_mod, cover, save_reroll, 
         invuln_title += ' (' + sign + save_mod + ')';
     }
     if (save_reroll == 'inv_fail') {
-        invuln_title += ', reroll failures';
+        invuln_title += ', Reroll Failures';
         invuln_prob = reroll(invuln_prob);
     } else if (save_reroll == 'inv_1') {
-        invuln_title += ', reroll 1s';
+        invuln_title += ', Reroll 1s';
         invuln_prob = reroll_1(invuln_prob);
     }
 
@@ -501,7 +500,7 @@ function do_saves(save_stat, invuln_stat, ap_val, save_mod, cover, save_reroll, 
     unsaved = filter_prob_array(wounds, unsaved_prob);
 
     if (unsaved_prob == 1) {
-        unsaved_title = 'auto-fail save';
+        unsaved_title = 'Auto-Fail Save';
     }
 
     graph(unsaved, unsaved_title, 'unsaved');
@@ -509,14 +508,14 @@ function do_saves(save_stat, invuln_stat, ap_val, save_mod, cover, save_reroll, 
 }
 
 function do_damage(damage_val, shake, damage_prob, unsaved) {
-    var damage_title = damage_val + ' damage';
+    var damage_title = damage_val.toUpperCase() + ' Damage';
     if (shake) {
         if (shake == '6') {
-            damage_title += ' (shake on 6)';
+            damage_title += ' (FNP 6)';
         } else if (shake == '56') {
-            damage_title += ' (shake on 5,6)';
+            damage_title += ' (FNP 5,6)';
         } else if (shake == 'quantum') {
-            damage_title += ' (quantum shield)';
+            damage_title += ' (Quantum Shield)';
         }
     }
 
@@ -556,7 +555,7 @@ function do_damage(damage_val, shake, damage_prob, unsaved) {
 
 function do_killed_40k(damage_prob, shake, unsaved, wound_val) {
     var killed = {'normal': []};
-    var killed_title = 'models killed';
+    var killed_title = 'Models Killed';
     damage_prob = shake_damage(damage_prob, shake);
     var mortal_damage_chance = shake_damage([0, 1], shake)[1];
     if (wound_val) {
@@ -621,7 +620,7 @@ function roll_40k() {
 
     // Number of attacks
     var attacks = dice_sum_prob_array(hit_dice);
-    var attack_title = hit_dice + ' attacks';
+    var attack_title = hit_dice.toUpperCase() + ' Attacks';
 
     graph(attacks, attack_title, 'attack');
 
@@ -994,12 +993,12 @@ var fields_40k = ['attacks', 'bs', 'ap', 's', 'd', 't', 'save', 'hit_mod', 'woun
 var checkboxes_40k = ['cover'];
 var selects_40k = ['hit_of_6', 'hit_reroll', 'wound_of_6', 'wound_reroll', 'save_reroll', 'shake'];
 function init_40k() {
-    charts['attack'] = init_chart('attack_chart', '{n} attacks: ', '>= {n} attacks: ', 'expected: {n} attacks');
-    charts['hit'] = init_chart('hit_chart', '{n} hits: ', '>= {n} hits: ', 'expected: {n} hits');
-    charts['wound'] = init_chart('wound_chart', '{n} wounds: ', '>= {n} wounds: ', 'expected: {n} wounds');
-    charts['unsaved'] = init_chart('unsaved_chart', '{n} unsaved: ', '>= {n} unsaved: ', 'expected: {n} unsaved');
-    charts['damage'] = init_chart('damage_chart', '{n} damage: ', '>= {n} damage: ', 'expected: {n} damage');
-    charts['killed'] = init_chart('killed_chart', '{n} killed: ', '>= {n} killed: ', 'expected: {n} killed');
+    charts['attack'] = init_chart('attack_chart', '{n} Attacks: ', '>= {n} Attacks: ', 'Expected: {n} attacks');
+    charts['hit'] = init_chart('hit_chart', '{n} Hits: ', '>= {n} Hits: ', 'Expected: {n} hits');
+    charts['wound'] = init_chart('wound_chart', '{n} Wounds: ', '>= {n} Wounds: ', 'Expected: {n} wounds');
+    charts['unsaved'] = init_chart('unsaved_chart', '{n} Unsaved: ', '>= {n} Unsaved: ', 'Expected: {n} unsaved');
+    charts['damage'] = init_chart('damage_chart', '{n} Damage: ', '>= {n} Damage: ', 'Expected: {n} damage');
+    charts['killed'] = init_chart('killed_chart', '{n} Killed: ', '>= {n} Killed: ', 'Expected: {n} killed');
 
     // Populate fields from the parameter string.
     var params = location.hash.substring(1);
@@ -1047,7 +1046,7 @@ function generate_permalink_40k() {
 // Shared Init
 function init_chart(chart_name, bar_label, line_label, ev_label) {
     var ctx = document.getElementById(chart_name);
-    var mortal_label = '{n} mortal: ';
+    var mortal_label = '{n} Mortal: ';
 
     return new Chart(ctx, {
         type: 'bar',
