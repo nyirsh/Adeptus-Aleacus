@@ -95,7 +95,6 @@
 
 .waves-effect {
     position: relative;
-    cursor: pointer;
     display: inline-block;
     overflow: hidden;
     -webkit-user-select: none;
@@ -329,4 +328,21 @@ h4 {
 
 .collapse-title:hover::after {
 	width: 100%;
+}
+
+a {
+	color: #71b6f9 !important;
+}
+
+a:hover {
+	color: #4ca3f7 !important;
+}
+
+.label-button {
+	font-size: 11px;
+    font-style: italic;
+}
+
+.switchery {
+	border-color: #424c5c !important;
 }

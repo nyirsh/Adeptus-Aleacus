@@ -1157,3 +1157,7 @@ const DATASET_EXPECTED = 3;
 
 const AXIS_LABELS = 0;
 const AXIS_LINEAR = 1;
+
+function AutoToggle(field){
+	document.getElementById(field).value = '';
+}
