@@ -637,6 +637,8 @@ function roll_40k(page) {
 	}
 	if (!test_passed) {
 		document.getElementById('results').style.display = "none";
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
 		return;
 	}
 	
