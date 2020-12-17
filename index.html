@@ -10,6 +10,7 @@
     <link href="./css/switchery.min.css" rel="stylesheet" type="text/css">
     <link href="./css/icons.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/dice.js"></script>
     <script type="text/javascript" src="./js/Chart.js"></script>
     <script type="text/javascript" src="./js/jquery.bootstrap-touchspin.min.js"></script>
@@ -49,63 +50,64 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6 ">
+                        <div class="col-md-6">
                             <div class="card-box">
-                                <h4 class="header-title mt-0 mb-4">Attacker</h4>
-                                <div class="form-row">
-                                    <div class="form-group col-md-2">
-                                        <label for="attacks" class="col-form-label">Attacks</label>
-                                        <input type="text" class="form-control" id="attacks" placeholder="Ex: 4, 2d6, 3+d3">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="bs" class="col-form-label">BS/WS</label>
-                                        <input type="text" class="form-control" id="bs" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="s" class="col-form-label">Strenght</label>
-                                        <input type="text" class="form-control" id="s" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="25" spinner-step="1" spinner-firstvalue="1">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="ap" class="col-form-label">AP</label>
-                                        <input type="text" class="form-control" id="ap" value="0" is-spinner="true" spinner-min="-10" spinner-max="0" spinner-step="1" spinner-firstvalue="0">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="d" class="col-form-label">Damage</label>
-                                        <input type="text" class="form-control" id="d" placeholder="Ex: 2, 2d6, 3+d3">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-2">
-                                        <label for="hit_mod" class="col-form-label">Hit Modifier</label>
-                                        <input type="text" class="form-control" id="hit_mod" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="hit_of_6" class="col-form-label">Hit rolls of 6</label>
-                                        <select id="hit_of_6" class="form-control">
-                                            <option value="">Nothing</option>
-                                            <option value="1roll">1 extra hit roll</option>
-                                            <option value="1">1 extra hit</option>
-                                            <option value="2">2 extra hits</option>
-                                            <option value="autowound">Auto-pass wound roll</option>
-                                            <option value="+mortal">1 additional mortal wound</option>
-                                            <option value="mortal">Damage as mortal wounds</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="hit_reroll" class="col-form-label">Reroll</label>
-                                        <select id="hit_reroll" class="form-control">
-                                            <option value="">No hit rolls</option>
-                                            <option value="1">Hit rolls of 1</option>
-                                            <option value="fail">Failed hit rolls</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-2">
+                                <a data-toggle="collapse" href="#collapseAttacker" role="button" aria-expanded="true" aria-controls="collapseAttacker">
+									<h4 class="header-title collapse-title">Attacker <div class="expand_caret caret"></div></h4>
+								</a>
+								<div class="collapse show" id="collapseAttacker">
+									<div class="form-row">
+										<div class="form-group col-md-3 col-6">
+											<label for="attacks" class="col-form-label">Attacks</label>
+											<input type="text" class="form-control" id="attacks" placeholder="Ex: 4, 2d6, 3+d3">
+										</div>
+										<div class="form-group col-md-2 col-6">
+											<label for="bs" class="col-form-label">BS/WS</label>
+											<input type="text" class="form-control" id="bs" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
+										</div>
+										<div class="form-group col-md-2 col-6">
+											<label for="s" class="col-form-label">Strenght</label>
+											<input type="text" class="form-control" id="s" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="25" spinner-step="1" spinner-firstvalue="1">
+										</div>
+										<div class="form-group col-md-2 col-6">
+											<label for="ap" class="col-form-label">AP</label>
+											<input type="text" class="form-control" id="ap" value="0" is-spinner="true" spinner-min="-10" spinner-max="0" spinner-step="1" spinner-firstvalue="0">
+										</div>
+										<div class="form-group col-md-3 col-6">
+											<label for="d" class="col-form-label">Damage</label>
+											<input type="text" class="form-control" id="d" placeholder="Ex: 2, 2d6, 3+d3">
+										</div>
+										<div class="form-group col-md-2 col-6">
+											<label for="hit_mod" class="col-form-label">Hit Modifier</label>
+											<input type="text" class="form-control" id="hit_mod" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
+										</div>
+										<div class="form-group col-md-4 col-12">
+											<label for="hit_of_6" class="col-form-label">Hit rolls of 6</label>
+											<select id="hit_of_6" class="form-control">
+												<option value="">Nothing</option>
+												<option value="1roll">1 extra hit roll</option>
+												<option value="1">1 extra hit</option>
+												<option value="2">2 extra hits</option>
+												<option value="autowound">Auto-pass wound roll</option>
+												<option value="+mortal">1 additional mortal wound</option>
+												<option value="mortal">Damage as mortal wounds</option>
+											</select>
+										</div>
+										<div class="form-group col-md-4 col-12">
+											<label for="hit_reroll" class="col-form-label">Reroll</label>
+											<select id="hit_reroll" class="form-control">
+												<option value="">No hit rolls</option>
+												<option value="1">Hit rolls of 1</option>
+												<option value="fail">Failed hit rolls</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-row">
+                                    <div class="form-group col-md-2 col-6">
                                         <label for="wound_mod" class="col-form-label">Wounds Modifier</label>
                                         <input type="text" class="form-control" id="wound_mod" placeholder="Ex: 4, 2d6" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-4 col-12">
                                         <label for="wound_of_6" class="col-form-label">Wound rolls of 6</label>
                                         <select id="wound_of_6" class="form-control">
                                             <option value="">Nothing</option>
@@ -116,7 +118,7 @@
                                             <option value="mortal">Damage as mortal wounds</option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-4 col-12">
                                         <label for="wound_reroll" class="col-form-label">Reroll</label>
                                         <select id="wound_reroll" class="form-control">
                                             <option value="">No wound rolls</option>
@@ -125,61 +127,66 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
+								</div>
+							</div>
                         </div>
                         <div class="col-md-6 ">
                             <div class="card-box">
-                                <h4 class="header-title mt-0 mb-4">Defender</h4>
-                                <div class="form-row">
-                                    <div class="form-group col-md-2">
-                                        <label for="t" class="col-form-label">Toughness</label>
-                                        <input type="text" class="form-control" id="t" placeholder="Ex: 4, leave blank to auto-wound" value="1" is-spinner="true" spinner-min="1" spinner-max="15" spinner-step="1" spinner-firstvalue="1">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="save" class="col-form-label">Save</label>
-                                        <input type="text" class="form-control" id="save" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="invulnerable" class="col-form-label">Invulnerable</label>
-                                        <input type="text" class="form-control" id="invulnerable" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="wounds" class="col-form-label">Wounds</label>
-                                        <input type="text" class="form-control" id="wounds" placeholder="Ex: 1, 13, leave blank if you don't care" value="0" is-spinner="true" spinner-min="0" spinner-max="50" spinner-step="1" spinner-firstvalue="0">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-2">
-                                        <label for="save_mod" class="col-form-label">Save Modifier</label>
-                                        <input type="text" class="form-control" id="save_mod" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="cover" class="col-form-label">Cover</label>
-                                        <div style="width: 100%; padding-top: 7px;">
-                                            <input type="checkbox" id="cover" value="0" class="js-switch">
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="save_reroll" class="col-form-label">Reroll</label>
-                                        <select id="save_reroll" class="form-control">
-                                            <option value="">No save rolls</option>
-                                            <option value="1">Any save rolls of 1</option>
-                                            <option value="fail">Any failed save rolls</option>
-                                            <option value="inv_1">Invulnerable save rolls of 1</option>
-                                            <option value="inv_fail">Failed invulnerable save rolls</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="shake" class="col-form-label">Feel No Pain</label>
-                                        <select id="shake" class="form-control">
-                                            <option value="">Never</option>
-                                            <option value="6">On a roll of 6</option>
-                                            <option value="56">On a roll of 5 or 6</option>
-                                            <option value="quantum">Roll under the damage value</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+								<a data-toggle="collapse" href="#collapseDefender" role="button" aria-expanded="true" aria-controls="collapseAttacker">
+									<h4 class="header-title collapse-title">Defender <div class="expand_caret caret"></div></h4>
+								</a>
+								<div class="collapse show" id="collapseDefender">
+									<div class="form-row">
+										<div class="form-group col-md-2">
+											<label for="t" class="col-form-label">Toughness</label>
+											<input type="text" class="form-control" id="t" placeholder="Ex: 4, leave blank to auto-wound" value="1" is-spinner="true" spinner-min="1" spinner-max="15" spinner-step="1" spinner-firstvalue="1">
+										</div>
+										<div class="form-group col-md-2">
+											<label for="save" class="col-form-label">Save</label>
+											<input type="text" class="form-control" id="save" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
+										</div>
+										<div class="form-group col-md-2">
+											<label for="invulnerable" class="col-form-label">Invulnerable</label>
+											<input type="text" class="form-control" id="invulnerable" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
+										</div>
+										<div class="form-group col-md-2">
+											<label for="wounds" class="col-form-label">Wounds</label>
+											<input type="text" class="form-control" id="wounds" placeholder="Ex: 1, 13, leave blank if you don't care" value="0" is-spinner="true" spinner-min="0" spinner-max="50" spinner-step="1" spinner-firstvalue="0">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-2">
+											<label for="save_mod" class="col-form-label">Save Modifier</label>
+											<input type="text" class="form-control" id="save_mod" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
+										</div>
+										<div class="form-group col-md-2">
+											<label for="cover" class="col-form-label">Cover</label>
+											<div style="width: 100%; padding-top: 7px;">
+												<input type="checkbox" id="cover" value="0" class="js-switch">
+											</div>
+										</div>
+										<div class="form-group col-md-4">
+											<label for="save_reroll" class="col-form-label">Reroll</label>
+											<select id="save_reroll" class="form-control">
+												<option value="">No save rolls</option>
+												<option value="1">Any save rolls of 1</option>
+												<option value="fail">Any failed save rolls</option>
+												<option value="inv_1">Invulnerable save rolls of 1</option>
+												<option value="inv_fail">Failed invulnerable save rolls</option>
+											</select>
+										</div>
+										<div class="form-group col-md-4">
+											<label for="shake" class="col-form-label">Feel No Pain</label>
+											<select id="shake" class="form-control">
+												<option value="">Never</option>
+												<option value="6">On a roll of 6</option>
+												<option value="56">On a roll of 5 or 6</option>
+												<option value="quantum">Roll under the damage value</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div class="col-12" style="padding-bottom: 25px">
 								<button type="button" class="btn btn-block btn-primary waves-effect waves-light" onclick="roll_40k()">
 									<i class="fas fa-dice mr-1"></i>

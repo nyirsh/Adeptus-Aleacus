@@ -275,3 +275,58 @@ button, input, optgroup, select, textarea {
 		padding-bottom: 30px;
 	}
 }
+
+a[data-toggle='collapse']:hover {
+	text-decoration: none;
+}
+
+.expand_caret {
+    transform: scale(1.6);
+    margin-left: 8px !important;
+    margin-top: -4px;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+}
+
+a[aria-expanded='false'] > h4 > .expand_caret {
+    transform: scale(1.6) rotate(-180deg);
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+h4 {
+    border-bottom: 2px solid #ffffff;
+    position: relative;
+	padding-bottom: 2px;
+}
+
+.collapse-title:hover {
+    transition: color .5s;
+}
+
+.collapse-title::after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 2px;
+	background: #71b6f9;
+	transition: width 0.5s;
+	position: absolute;
+	margin-top: 2px;
+}
+
+.collapse-title:hover::after {
+	width: 100%;
+}
