@@ -638,11 +638,12 @@ function roll_40k(page) {
 	if (!test_passed) {
 		document.getElementById('results').style.display = "none";
 		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        $("a[href='#collapseAttacker'][aria-expanded='false']").click();
 		return;
 	}
 	
-	if (damage_val == '') {
+	if (damage_val == '' || damage_val == 0) {
 		document.getElementById('damage_chart').style.display = 'none';
 		document.getElementById('damage_text').style.display = 'none';
 		wound_val = Number.NaN;

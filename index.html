@@ -138,81 +138,91 @@
 							</div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-12">
-                            <div class="card-box">
-								<a data-toggle="collapse" href="#collapseDefender" role="button" aria-expanded="true" aria-controls="collapseAttacker" tabindex="-1">
-									<h4 class="header-title collapse-title">Defender <div class="expand_caret caret"></div></h4>
-								</a>
-								<div class="collapse show" id="collapseDefender">
-									<div class="form-row">
-										<div class="form-group col-lg-2 col-6">
-											<label for="t" class="col-form-label">T
-												<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Weapon Strenght" data-content='By leaving this field empty or by clicking on "Auto-Wound" the tool will skip the wound roll and all the Hits will automatically wound the target.' tabindex="0"></a> 
-												<a href="javascript:AutoToggle('t');" class="label-button" tabindex="-1">Auto-Wound</a>
-											</label>
-											<input type="text" class="form-control-sm" calc-page="1" id="t" tabindex="12" placeholder="Ex: 4" value="4" is-spinner="true" spinner-min="1" spinner-max="15" spinner-step="1" spinner-firstvalue="4">
-										</div>
-										<div class="form-group col-lg-2 col-6">
-											<label for="save" class="col-form-label">Save 
-												<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Save" data-content='By leaving this field empty or by clicking on "Auto-Fail" the tool will skip the save roll and all the Wounds will be automatically applied to the target.<br/><i>Please be aware that, if enabled, the invlunerable save roll will still be taken into consideration.</i><br/><br/>If the combined stats of AP and Save makes the roll worse than the Invulnerable Save, this roll will be skipped.' tabindex="0"></a> 
-												<a href="javascript:AutoToggle('save');" class="label-button" tabindex="-1">Auto-Fail</a>
-											</label>
-											<input type="text" class="form-control-sm" calc-page="1" id="save" tabindex="13" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="3">
-										</div>
-										<div class="form-group col-lg-2 col-6">
-											<label for="invulnerable" class="col-form-label">Invuln 
-												<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Invulnerable Save" data-content='By leaving this field empty or by clicking on "No Save" the tool will skip the invulnerable save roll and all the Wounds will be automatically applied to the target accordingly.<br><i>Please be aware that the save roll, if enabled, will still be taken into consideration.</i><br/><br/>If the combined stats of AP and Save makes the roll better than the Invulnerable Save, this roll will be skipped.' tabindex="0"></a> 
-												<a href="javascript:AutoToggle('invulnerable');" class="label-button" tabindex="-1">No Save</a> 
-											</label>
-											<input type="text" class="form-control-sm" calc-page="1" id="invulnerable" tabindex="14" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
-										</div>
-										<div class="form-group col-lg-2 col-6">
-											<label for="wounds" class="col-form-label">W
-												<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Wounds per Model" data-content='By leaving this field empty or by clicking on "No Wounds" the tool will not show how many models would be killed on average.' tabindex="0"></a> 
-												<a href="javascript:AutoToggle('wounds');" class="label-button" tabindex="-1">No Wounds</a> 
-											</label>
-											<input type="text" class="form-control-sm" calc-page="1" id="wounds" tabindex="15" placeholder="-" value="1" is-spinner="true" spinner-min="1" spinner-max="50" spinner-step="1" spinner-firstvalue="1">
-										</div>
-									</div>
-									<div class="form-row">
-										<div class="form-group col-lg-2 col-6">
-											<label for="save_mod" class="col-form-label">Save Mod</label>
-											<input type="text" class="form-control-sm" calc-page="1" id="save_mod" tabindex="16" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
-										</div>
-										<div class="form-group col-lg-2 col-6">
-											<label for="cover" class="col-form-label">Light Cover</label>
-											<div style="width: 100%; padding-top: 7px;">
-												<input type="checkbox" id="cover" calc-page="1" tabindex="17" value="0" class="js-switch">
+							<div class="row">
+								<div class="col-12">
+									<div class="card-box">
+										<a data-toggle="collapse" href="#collapseDefender" role="button" aria-expanded="true" aria-controls="collapseAttacker" tabindex="-1">
+											<h4 class="header-title collapse-title">Defender <div class="expand_caret caret"></div></h4>
+										</a>
+										<div class="collapse show" id="collapseDefender">
+											<div class="form-row">
+												<div class="form-group col-lg-2 col-6">
+													<label for="t" class="col-form-label">
+														T
+														<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Weapon Strenght" data-content='By leaving this field empty or by clicking on "Auto-Wound" the tool will skip the wound roll and all the Hits will automatically wound the target.' tabindex="0"></a>
+														<a href="javascript:AutoToggle('t');" class="label-button" tabindex="-1">Auto-Wound</a>
+													</label>
+													<input type="text" class="form-control-sm" calc-page="1" id="t" tabindex="12" placeholder="Ex: 4" value="4" is-spinner="true" spinner-min="1" spinner-max="15" spinner-step="1" spinner-firstvalue="4">
+												</div>
+												<div class="form-group col-lg-2 col-6">
+													<label for="save" class="col-form-label">
+														Save
+														<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Save" data-content='By leaving this field empty or by clicking on "Auto-Fail" the tool will skip the save roll and all the Wounds will be automatically applied to the target.<br/><i>Please be aware that, if enabled, the invlunerable save roll will still be taken into consideration.</i><br/><br/>If the combined stats of AP and Save makes the roll worse than the Invulnerable Save, this roll will be skipped.' tabindex="0"></a>
+														<a href="javascript:AutoToggle('save');" class="label-button" tabindex="-1">Auto-Fail</a>
+													</label>
+													<input type="text" class="form-control-sm" calc-page="1" id="save" tabindex="13" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="3">
+												</div>
+												<div class="form-group col-lg-2 col-6">
+													<label for="invulnerable" class="col-form-label">
+														Invuln
+														<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Invulnerable Save" data-content='By leaving this field empty or by clicking on "No Save" the tool will skip the invulnerable save roll and all the Wounds will be automatically applied to the target accordingly.<br><i>Please be aware that the save roll, if enabled, will still be taken into consideration.</i><br/><br/>If the combined stats of AP and Save makes the roll better than the Invulnerable Save, this roll will be skipped.' tabindex="0"></a>
+														<a href="javascript:AutoToggle('invulnerable');" class="label-button" tabindex="-1">No Save</a>
+													</label>
+													<input type="text" class="form-control-sm" calc-page="1" id="invulnerable" tabindex="14" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
+												</div>
+												<div class="form-group col-lg-2 col-6">
+													<label for="wounds" class="col-form-label">
+														W
+														<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Wounds per Model" data-content='By leaving this field empty or by clicking on "No Wounds" the tool will not show how many models would be killed on average.' tabindex="0"></a>
+														<a href="javascript:AutoToggle('wounds');" class="label-button" tabindex="-1">No Wounds</a>
+													</label>
+													<input type="text" class="form-control-sm" calc-page="1" id="wounds" tabindex="15" placeholder="-" value="1" is-spinner="true" spinner-min="1" spinner-max="50" spinner-step="1" spinner-firstvalue="1">
+												</div>
 											</div>
-										</div>
-										<div class="form-group col-lg-4 col-12">
-											<label for="save_reroll" class="col-form-label">Reroll</label>
-											<select id="save_reroll" class="form-control-sm" calc-page="1" tabindex="18">
-												<option value="">No save rolls</option>
-												<option value="1">Any save rolls of 1</option>
-												<option value="fail">Any failed save rolls</option>
-												<option value="inv_1">Invulnerable save rolls of 1</option>
-												<option value="inv_fail">Failed invulnerable save rolls</option>
-											</select>
-										</div>
-										<div class="form-group col-lg-4">
-											<label for="shake" class="col-form-label">Feel No Pain</label>
-											<select id="shake" class="form-control-sm" calc-page="1" tabindex="19">
-												<option value="">Never</option>
-												<option value="6">On a roll of 6</option>
-												<option value="56">On a roll of 5 or 6</option>
-												<option value="quantum">Roll under the damage value</option>
-											</select>
+											<div class="form-row">
+												<div class="form-group col-lg-2 col-6">
+													<label for="save_mod" class="col-form-label">Save Mod</label>
+													<input type="text" class="form-control-sm" calc-page="1" id="save_mod" tabindex="16" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
+												</div>
+												<div class="form-group col-lg-2 col-6">
+													<label for="cover" class="col-form-label">Light Cover</label>
+													<div style="width: 100%; padding-top: 7px;">
+														<input type="checkbox" id="cover" calc-page="1" tabindex="17" value="0" class="js-switch">
+													</div>
+												</div>
+												<div class="form-group col-lg-4 col-12">
+													<label for="save_reroll" class="col-form-label">Reroll</label>
+													<select id="save_reroll" class="form-control-sm" calc-page="1" tabindex="18">
+														<option value="">No save rolls</option>
+														<option value="1">Any save rolls of 1</option>
+														<option value="fail">Any failed save rolls</option>
+														<option value="inv_1">Invulnerable save rolls of 1</option>
+														<option value="inv_fail">Failed invulnerable save rolls</option>
+													</select>
+												</div>
+												<div class="form-group col-lg-4">
+													<label for="shake" class="col-form-label">Feel No Pain</label>
+													<select id="shake" class="form-control-sm" calc-page="1" tabindex="19">
+														<option value="">Never</option>
+														<option value="6">On a roll of 6</option>
+														<option value="56">On a roll of 5 or 6</option>
+														<option value="quantum">Roll under the damage value</option>
+													</select>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-12" style="padding-bottom: 25px">
-								<button type="button" class="btn btn-block btn-primary waves-effect waves-light" calc-page="1" onclick="roll_40k($(this).attr('calc-page')); document.getElementById('results').scrollIntoView();" tabindex="20">
-									<i class="fas fa-dice mr-1"></i>
-									<span>Roll</span>
-								</button>
+							<div class="row">
+								<div class="col-12" style="padding-bottom: 25px">
+									<button type="button" class="btn btn-block btn-primary waves-effect waves-light" calc-page="1" onclick="roll_40k($(this).attr('calc-page')); document.getElementById('results').scrollIntoView();" tabindex="20">
+										<i class="fas fa-dice mr-1"></i>
+										<span>Roll</span>
+									</button>
+								</div>
 							</div>
-                        </div>
+						</div>
                     </div>
                     <div class="row" id="results" style="display: none;">
                         <div class="col-12">
