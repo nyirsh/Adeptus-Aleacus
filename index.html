@@ -46,38 +46,38 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-lg-6 col-md-6 col-12">
                             <div class="card-box">
                                 <a data-toggle="collapse" href="#collapseAttacker" role="button" aria-expanded="true" aria-controls="collapseAttacker" tabindex="-1">
 									<h4 class="header-title collapse-title">Attacker <div class="expand_caret caret"></div></h4>
 								</a>
 								<div class="collapse show" id="collapseAttacker">
 									<div class="form-row">
-										<div class="form-group col-md-3 col-6">
+										<div class="form-group col-lg-3 col-6">
 											<label for="attacks" class="col-form-label">Attacks</label>
 											<input type="text" class="form-control" id="attacks" tabindex="1" placeholder="Ex: 4, 2d6, 3+d3">
 										</div>
-										<div class="form-group col-md-2 col-6">
+										<div class="form-group col-lg-2 col-6">
 											<label for="bs" class="col-form-label">BS/WS <a href="javascript:AutoToggle('bs');" class="label-button" tabindex="-1">Auto-Hit</a></label>
 											<input type="text" class="form-control" id="bs" tabindex="2" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
 										</div>
-										<div class="form-group col-md-2 col-6">
+										<div class="form-group col-lg-2 col-6">
 											<label for="s" class="col-form-label">Strenght <a href="javascript:AutoToggle('s');" class="label-button" tabindex="-1">Auto-Wound</a></label>
 											<input type="text" class="form-control" id="s" tabindex="3" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="25" spinner-step="1" spinner-firstvalue="1">
 										</div>
-										<div class="form-group col-md-2 col-6">
+										<div class="form-group col-lg-2 col-6">
 											<label for="ap" class="col-form-label">AP</label>
 											<input type="text" class="form-control" id="ap" tabindex="4" value="0" is-spinner="true" spinner-min="-10" spinner-max="0" spinner-step="1" spinner-firstvalue="0">
 										</div>
-										<div class="form-group col-md-3 col-6">
+										<div class="form-group col-lg-3 col-6">
 											<label for="d" class="col-form-label">Damage</label>
 											<input type="text" class="form-control" id="d" tabindex="5" placeholder="Ex: 2, 2d6, 3+d3">
 										</div>
-										<div class="form-group col-md-2 col-6">
+										<div class="form-group col-lg-2 col-6">
 											<label for="hit_mod" class="col-form-label">Hit Modifier</label>
 											<input type="text" class="form-control" id="hit_mod" tabindex="6" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
 										</div>
-										<div class="form-group col-md-4 col-12">
+										<div class="form-group col-lg-4 col-12">
 											<label for="hit_of_6" class="col-form-label">Hit rolls of 6</label>
 											<select id="hit_of_6" class="form-control" tabindex="7">
 												<option value="">Nothing</option>
@@ -89,7 +89,7 @@
 												<option value="mortal">Damage as mortal wounds</option>
 											</select>
 										</div>
-										<div class="form-group col-md-4 col-12">
+										<div class="form-group col-lg-4 col-12">
 											<label for="hit_reroll" class="col-form-label">Reroll</label>
 											<select id="hit_reroll" class="form-control" tabindex="8">
 												<option value="">No hit rolls</option>
@@ -99,11 +99,11 @@
 										</div>
 									</div>
 									<div class="form-row">
-                                    <div class="form-group col-md-2 col-6">
+                                    <div class="form-group col-lg-2 col-6">
                                         <label for="wound_mod" class="col-form-label">Wounds Modifier</label>
                                         <input type="text" class="form-control" id="wound_mod" tabindex="9" placeholder="Ex: 4, 2d6" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
                                     </div>
-                                    <div class="form-group col-md-4 col-12">
+                                    <div class="form-group col-lg-4 col-12">
                                         <label for="wound_of_6" class="col-form-label">Wound rolls of 6</label>
                                         <select id="wound_of_6" class="form-control" tabindex="10">
                                             <option value="">Nothing</option>
@@ -114,7 +114,7 @@
                                             <option value="mortal">Damage as mortal wounds</option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-4 col-12">
+                                    <div class="form-group col-lg-4 col-12">
                                         <label for="wound_reroll" class="col-form-label">Reroll</label>
                                         <select id="wound_reroll" class="form-control" tabindex="11">
                                             <option value="">No wound rolls</option>
@@ -126,42 +126,42 @@
 								</div>
 							</div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-lg-6 col-md-6 col-12">
                             <div class="card-box">
 								<a data-toggle="collapse" href="#collapseDefender" role="button" aria-expanded="true" aria-controls="collapseAttacker" tabindex="-1">
 									<h4 class="header-title collapse-title">Defender <div class="expand_caret caret"></div></h4>
 								</a>
 								<div class="collapse show" id="collapseDefender">
 									<div class="form-row">
-										<div class="form-group col-md-2 col-6">
+										<div class="form-group col-lg-2 col-6">
 											<label for="t" class="col-form-label">Toughness</label>
 											<input type="text" class="form-control" id="t" tabindex="12" placeholder="Ex: 4, leave blank to auto-wound" value="4" is-spinner="true" spinner-min="1" spinner-max="15" spinner-step="1" spinner-firstvalue="4">
 										</div>
-										<div class="form-group col-md-2 col-6">
+										<div class="form-group col-lg-2 col-6">
 											<label for="save" class="col-form-label">Save <a href="javascript:AutoToggle('save');" class="label-button" tabindex="-1">Auto-Fail</a></label>
 											<input type="text" class="form-control" id="save" tabindex="13" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="3">
 										</div>
-										<div class="form-group col-md-2 col-6">
+										<div class="form-group col-lg-2 col-6">
 											<label for="invulnerable" class="col-form-label">Invulnerable <a href="javascript:AutoToggle('invulnerable');" class="label-button" tabindex="-1">No Invuln</a></label>
 											<input type="text" class="form-control" id="invulnerable" tabindex="14" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
 										</div>
-										<div class="form-group col-md-2 col-6">
+										<div class="form-group col-lg-2 col-6">
 											<label for="wounds" class="col-form-label">Wounds</label>
 											<input type="text" class="form-control" id="wounds" tabindex="15" placeholder="Ex: 1, 13, leave blank if you don't care" value="0" is-spinner="true" spinner-min="0" spinner-max="50" spinner-step="1" spinner-firstvalue="0">
 										</div>
 									</div>
 									<div class="form-row">
-										<div class="form-group col-md-2 col-6">
+										<div class="form-group col-lg-2 col-6">
 											<label for="save_mod" class="col-form-label">Save Modifier</label>
 											<input type="text" class="form-control" id="save_mod" tabindex="16" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
 										</div>
-										<div class="form-group col-md-2 col-6">
+										<div class="form-group col-lg-2 col-6">
 											<label for="cover" class="col-form-label">Cover</label>
 											<div style="width: 100%; padding-top: 7px;">
 												<input type="checkbox" id="cover" tabindex="17" value="0" class="js-switch">
 											</div>
 										</div>
-										<div class="form-group col-md-4 col-12">
+										<div class="form-group col-lg-4 col-12">
 											<label for="save_reroll" class="col-form-label">Reroll</label>
 											<select id="save_reroll" class="form-control" tabindex="18">
 												<option value="">No save rolls</option>
@@ -171,7 +171,7 @@
 												<option value="inv_fail">Failed invulnerable save rolls</option>
 											</select>
 										</div>
-										<div class="form-group col-md-4">
+										<div class="form-group col-lg-4">
 											<label for="shake" class="col-form-label">Feel No Pain</label>
 											<select id="shake" class="form-control" tabindex="19">
 												<option value="">Never</option>
@@ -196,27 +196,27 @@
                             <div class="card-box">
                                 <h4 class="header-title mt-0 mb-4">Results</h4>
                                 <div class="row">
-                                    <div class="col-xl-2 ">
+                                    <div class="col-lg-2 col-md-4 col-6">
                                         <canvas id="attack_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
                                         <p class="text-muted font-14 mb-3" id="attack_text"></p>
                                     </div>
-                                    <div class="col-xl-2 ">
+                                    <div class="col-lg-2 col-md-4 col-6">
                                         <canvas id="hit_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
                                         <p class="text-muted font-14 mb-3" id="hit_text"></p>
                                     </div>
-                                    <div class="col-xl-2 ">
+                                    <div class="col-lg-2 col-md-4 col-6">
                                         <canvas id="wound_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
                                         <p class="text-muted font-14 mb-3" id="wound_text"></p>
                                     </div>
-                                    <div class="col-xl-2 ">
+                                    <div class="col-lg-2 col-md-4 col-6">
                                         <canvas id="unsaved_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
                                         <p class="text-muted font-14 mb-3" id="unsaved_text"></p>
                                     </div>
-                                    <div class="col-xl-2 ">
+                                    <div class="col-lg-2 col-md-4 col-6">
                                         <canvas id="damage_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
                                         <p class="text-muted font-14 mb-3" id="damage_text"></p>
                                     </div>
-                                    <div class="col-xl-2 ">
+                                    <div class="col-lg-2 col-md-4 col-6">
                                         <canvas id="killed_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
                                         <p class="text-muted font-14 mb-3" id="killed_text"></p>
                                     </div>
@@ -232,11 +232,11 @@
     <footer class="footer">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <a href="https://www.games-workshop.com/Warhammer-40-000" target="_blank" tabindex="-1">Warhammer 40000</a> is © Games Workshop Limited.<br>
                 </div>
-                <div class="col-md-6">
-                    <div class="text-md-right footer-links d-none d-sm-block" target="_blank" tabindex="-1">
+                <div class="col-lg-6 col-md-6">
+                    <div class="text-md-right footer-links" target="_blank" tabindex="-1">
                         <a href="https://github.com/nyirsh/Warhammer-40Dice/issues/new" target="_blank" tabindex="-1">Report an Issue</a>
                         <a href="https://github.com/nyirsh/Warhammer-40Dice/wiki" target="_blank" tabindex="-1">Help</a>
                         <a href="https://www.linkedin.com/in/davide-nyirsh-villa/" target="_blank" tabindex="-1">About Me</a>

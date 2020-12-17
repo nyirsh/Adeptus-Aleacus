@@ -7,7 +7,7 @@
     color: #adb5bd;
     text-align: left;
     background-color: #282e38;
-    padding-bottom: 60px;
+    padding-bottom: 25px;
     overflow-x: hidden;
 }
 
@@ -247,10 +247,11 @@ button, input, optgroup, select, textarea {
         transition: all .4s;
     }
 	
-@media (max-width:767.98px) {
+@media (max-width:850px) {
     .footer {
         left: 0 !important;
         text-align: center;
+		font-size: 10px;
     }
 	
 	.body {
@@ -262,7 +263,7 @@ button, input, optgroup, select, textarea {
 		color: #adb5bd;
 		text-align: left;
 		background-color: #282e38;
-		padding-bottom: 60px;
+		padding-bottom: 25px;
 		overflow-x: hidden;
 		position: absolute;
 	}
