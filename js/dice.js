@@ -423,9 +423,13 @@ function do_saves(save_stat, invuln_stat, ap_val, save_mod, cover, save_reroll, 
         invuln_stat = 100;
     }
 
+	if (save_stat == 100 && invuln_stat == 100)
+		total_save_mod = 0;
+
     // Normal save.
     var save_prob = success_chance(save_stat, total_save_mod);
     var save_title = 'Save on ' + save_stat + '+';
+	
     if (total_save_mod) {
         var sign = '';
         if (total_save_mod > 0) {
@@ -499,7 +503,7 @@ function do_saves(save_stat, invuln_stat, ap_val, save_mod, cover, save_reroll, 
     var unsaved;
     unsaved = filter_prob_array(wounds, unsaved_prob);
 
-    if (unsaved_prob == 1) {
+    if (unsaved_prob == 1 || (save_stat == 100 && invuln_stat == 100)) {
         unsaved_title = 'Auto-Fail Save';
     }
 
@@ -589,10 +593,8 @@ function do_killed_40k(damage_prob, shake, unsaved, wound_val) {
     return killed;
 }
 
-function roll_40k() {
-
-    document.getElementById('results').style.display = "block";
-
+function roll_40k(page) {
+	console.log(page);
     // Fetch all values up front
     var hit_dice = fetch_value('attacks');
     var hit_stat = fetch_int_value('bs');
@@ -607,19 +609,61 @@ function roll_40k() {
     var save_stat = fetch_int_value('save');
     var invuln_stat = fetch_int_value('invulnerable');
     if (invuln_stat == 0)
-        invuln_stat = NaN;
+        invuln_stat = Number.NaN;
     var ap_val = fetch_int_value('ap');
     var save_mod = fetch_int_value('save_mod');
     var cover = is_checked('cover');
     var save_reroll = fetch_value('save_reroll');
     var damage_val = fetch_value('d');
     var wound_val = fetch_int_value('wounds');
+	if (wound_val == 0)
+		wound_val = Number.NaN;
     var shake = fetch_value('shake');
 
-    var damage_prob = dice_sum_prob_array(damage_val).normal;
+	// validate values
+	var test_passed = true;
+	var re_dice = new RegExp('^([0-9]+|[1-9]+[0-9]*[dD][1-9]+[0-9]*|[dD][1-9]+[0-9]*|[1-9]+[0-9]*\\+[dD][1-9]+[0-9]*|[1-9]+[0-9]*\\+[1-9]+[0-9]*[dD][1-9]+[0-9]*)$');
+	$('#attacks').removeAttr('style');
+	$('#d').removeAttr('style');
+	if (re_dice.test(hit_dice) == false) {
+		$('#attacks').attr('style', 'border-color: red !important');
+		test_passed = false;
+	}
+	if (damage_val != null && damage_val != '') {
+		if (re_dice.test(damage_val) == false) {
+			$('#d').attr('style', 'border-color: red !important');
+			test_passed = false;
+		}
+	}
+	if (!test_passed) {
+		document.getElementById('results').style.display = "none";
+		return;
+	}
+	
+	if (damage_val == '') {
+		document.getElementById('damage_chart').style.display = 'none';
+		document.getElementById('damage_text').style.display = 'none';
+		wound_val = Number.NaN;
+	}
+	else {
+		document.getElementById('damage_chart').style.display = 'block';
+		document.getElementById('damage_text').style.display = 'block';
+	}
+	if (isNaN(wound_val)) {
+		document.getElementById('killed_chart').style.display = 'none';
+		document.getElementById('killed_text').style.display = 'none';
+	}
+	else {
+		document.getElementById('killed_chart').style.display = 'block';
+		document.getElementById('killed_text').style.display = 'block';
+	}
+	
+	var damage_prob = dice_sum_prob_array(damage_val).normal;
 
     // Number of attacks
     var attacks = dice_sum_prob_array(hit_dice);
+	document.getElementById('results').style.display = "block";
+	
     var attack_title = hit_dice.toUpperCase() + ' Attacks';
 
     graph(attacks, attack_title, 'attack');
@@ -745,7 +789,7 @@ function filter_prob_array(input_probs, probability) {
 
 // Returns a probability array for a specified number of dice in nDs notation.
 // Will also return a constant probability array if no 'd' is present.
-function dice_sum_prob_array(value) {
+function dice_sum_prob_array(value, retnull) {
     var die_prob = {'normal': [], 'mortal': []};
 
     var plus = value.toLowerCase().indexOf('+');
@@ -784,8 +828,6 @@ function dice_sum_prob_array(value) {
 }
 
 // Roll n dice with the given probability distribution.
-// http://ghostlords.com/2008/03/dice-rolling-2/
-// Modified to support dice with non-uniform probabilities.
 // Note that this includes dice that can roll a result of 0!
 function roll_n_dice(n, die_prob) {
     // If we're rolling 0 dice, 100% chance of getting 0
@@ -1017,7 +1059,7 @@ function init_40k() {
                     document.getElementById(key).value = value;
                 }
             }
-            roll_40k();
+            roll_40k(1);
         }
     }
 }
@@ -1160,4 +1202,5 @@ const AXIS_LINEAR = 1;
 
 function AutoToggle(field){
 	document.getElementById(field).value = '';
+	roll_40k($('#' + field).attr('calc-page'));
 }
