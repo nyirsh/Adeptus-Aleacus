@@ -377,7 +377,11 @@ function calc_wound_prob(wound_stat, wound_mod, wound_reroll) {
         wound_prob = reroll(wound_prob);
     } else if (wound_reroll == '1') {
         wound_prob = reroll_1(wound_prob);
-    }
+    } else if (wound_reroll == '-6') {
+        wound_prob = negative_reroll_6(wound_prob);
+    } else if (wound_reroll == '-wounds') {
+		wound_prob = negative_reroll(wound_prob);
+	}
 
     // Auto-wound on roll of 6+
     // Only apply normal wound probability to lesser hits
@@ -405,7 +409,11 @@ function do_wounds(wound_stat, wound_mod, wound_reroll, wound_prob, hit_of_6, hi
         wound_title += ', reroll failed';
     } else if (wound_reroll == '1') {
         wound_title += ', reroll 1s';
-    }
+    } else if (wound_reroll == '-6') {
+        wound_title += ', neg. reroll 6s';
+    } else if (wound_reroll == '-wounds') {
+		wound_title += ', neg. reroll wounds';
+	}
 
     // Apply probability filter
     var wounds = filter_prob_array(hits, wound_prob.pass_chance);
@@ -474,6 +482,12 @@ function do_saves(save_stat, invuln_stat, ap_val, save_mod, cover, save_reroll, 
     } else if (save_reroll == '1') {
         save_title += ', Reroll 1s';
         save_prob = reroll_1(save_prob);
+    } else if (save_reroll == '-6') {
+        save_title += ', neg. reroll 6s';
+        save_prob = negative_reroll_6(save_prob);
+    } else if (save_reroll == '-save') {
+        save_title += ', neg. reroll saves';
+        save_prob = negative_reroll(save_prob);
     }
 
     // Invulnerable save; ignores AP and cover, but includes other modifiers.
@@ -492,6 +506,12 @@ function do_saves(save_stat, invuln_stat, ap_val, save_mod, cover, save_reroll, 
     } else if (save_reroll == 'inv_1') {
         invuln_title += ', Reroll 1s';
         invuln_prob = reroll_1(invuln_prob);
+    } else if (save_reroll == '-6_inv') {
+        invuln_title += ', neg. reroll 6s';
+        invuln_prob = negative_reroll_6(invuln_prob);
+    } else if (save_reroll == '-inv') {
+        invuln_title += ', neg. reroll saves';
+        invuln_prob = negative_reroll(invuln_prob);
     }
 
     // wounds of 6 get -1 additional AP
