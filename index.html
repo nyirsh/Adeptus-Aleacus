@@ -89,6 +89,16 @@
 											<input type="text" class="form-control-sm" calc-page="1" id="hit_mod" tabindex="6" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
 										</div>
 										<div class="form-group col-lg-4 col-12">
+											<label for="hit_reroll" class="col-form-label">Hit Reroll</label>
+											<select id="hit_reroll" class="form-control-sm" calc-page="1" tabindex="8">
+												<option value="">No hit rolls</option>
+												<option value="1">Hit rolls of 1</option>
+												<option value="fail">Failed hit rolls</option>
+												<option value="-6">[Negative] Hit rolls of 6</option>
+												<option value="-hits">[Negative] All passed hit rolls</option>
+											</select>
+										</div>
+										<div class="form-group col-lg-4 col-12">
 											<label for="hit_of_6" class="col-form-label">Hit rolls of 6</label>
 											<select id="hit_of_6" class="form-control-sm" calc-page="1" tabindex="7">
 												<option value="">Nothing</option>
@@ -100,21 +110,19 @@
 												<option value="mortal">Damage as mortal wounds</option>
 											</select>
 										</div>
-										<div class="form-group col-lg-4 col-12">
-											<label for="hit_reroll" class="col-form-label">Reroll</label>
-											<select id="hit_reroll" class="form-control-sm" calc-page="1" tabindex="8">
-												<option value="">No hit rolls</option>
-												<option value="1">Hit rolls of 1</option>
-												<option value="fail">Failed hit rolls</option>
-												<option value="-6">[Negative] Hit rolls of 6</option>
-												<option value="-hits">[Negative] All passed hit rolls</option>
-											</select>
-										</div>
 									</div>
 									<div class="form-row">
                                     <div class="form-group col-lg-2 col-6">
                                         <label for="wound_mod" class="col-form-label">Wounds Mod</label>
                                         <input type="text" class="form-control-sm" calc-page="1" id="wound_mod" tabindex="9" placeholder="Ex: 4, 2d6" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
+                                    </div>
+									<div class="form-group col-lg-4 col-12">
+                                        <label for="wound_reroll" class="col-form-label">Wounds Reroll</label>
+                                        <select id="wound_reroll" class="form-control-sm" calc-page="1" tabindex="11">
+                                            <option value="">No wound rolls</option>
+                                            <option value="1">Wound rolls of 1</option>
+                                            <option value="fail">Failed wound rolls</option>
+                                        </select>
                                     </div>
                                     <div class="form-group col-lg-4 col-12">
                                         <label for="wound_of_6" class="col-form-label">Wound rolls of 6</label>
@@ -125,14 +133,6 @@
                                             <option value="-4">Extra -4 AP</option>
                                             <option value="+mortal">1 extra mortal wound</option>
                                             <option value="mortal">Damage as mortal wounds</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-lg-4 col-12">
-                                        <label for="wound_reroll" class="col-form-label">Reroll</label>
-                                        <select id="wound_reroll" class="form-control-sm" calc-page="1" tabindex="11">
-                                            <option value="">No wound rolls</option>
-                                            <option value="1">Wound rolls of 1</option>
-                                            <option value="fail">Failed wound rolls</option>
                                         </select>
                                     </div>
                                 </div>
@@ -193,7 +193,7 @@
 													</div>
 												</div>
 												<div class="form-group col-lg-4 col-12">
-													<label for="save_reroll" class="col-form-label">Reroll</label>
+													<label for="save_reroll" class="col-form-label">Save Reroll</label>
 													<select id="save_reroll" class="form-control-sm" calc-page="1" tabindex="18">
 														<option value="">No save rolls</option>
 														<option value="1">Any save rolls of 1</option>
