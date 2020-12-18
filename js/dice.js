@@ -109,6 +109,31 @@ function reroll(prob){
     return ret;
 }
 
+// Negative reroll 6s
+// Returns new success probability struct with updated values.
+function negative_reroll_6(prob){
+    var ret = {};
+
+    // Natural sixes happens 1/6 of the time.
+    ret.pass_chance = prob.pass_chance - prob.pass_chance / 6.0;
+    ret.fail_chance = 1.0 - ret.pass_chance;
+    ret.six_chance = prob.six_chance - prob.six_chance / 6.0;
+
+    return ret;
+}
+
+// Negative Reroll all passed rolls
+// Returns new success probability struct with updated values.
+function negative_reroll(prob){
+    var ret = {};
+    
+    ret.pass_chance = prob.pass_chance - prob.natural_fail_chance * prob.pass_chance;
+    ret.fail_chance = 1.0 - ret.pass_chance;
+    ret.six_chance = prob.six_chance - prob.natural_fail_chance * prob.six_chance;
+
+    return ret;
+}
+
 // Shake off damage
 // Returns a prob array reflecting the chance to ignore wounds.
 function shake_damage(damage_prob, shake) {
@@ -271,7 +296,13 @@ function do_hits(hit_stat, hit_mod, hit_reroll, attacks, hit_of_6, damage_prob) 
     } else if (hit_reroll == '1') {
         hit_title += ', reroll 1s';
         hit_prob = reroll_1(hit_prob);
-    }
+    } else if (hit_reroll == '-6') {
+        hit_title += ', neg. reroll 6s';
+        hit_prob = negative_reroll_6(hit_prob);
+    } else if (hit_reroll == '-hits') {
+		hit_title += ', neg. reroll hits';
+		hit_prob = negative_reroll(hit_prob);
+	}
 
     // Apply probability filter
     var hits = filter_prob_array(attacks, hit_prob.pass_chance);

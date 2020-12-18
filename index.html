@@ -106,6 +106,8 @@
 												<option value="">No hit rolls</option>
 												<option value="1">Hit rolls of 1</option>
 												<option value="fail">Failed hit rolls</option>
+												<option value="-6">[Negative] Hit rolls of 6</option>
+												<option value="-hits">[Negative] All passed hit rolls</option>
 											</select>
 										</div>
 									</div>
@@ -310,6 +312,7 @@
 		});
 		
 		$("input[calc-page]").change(function() { roll_40k($(this).attr('calc-page')); });
+		$("select[calc-page]").change(function() { roll_40k($(this).attr('calc-page')); });
     </script>
 </body>
 </html>
