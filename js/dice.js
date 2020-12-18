@@ -637,8 +637,7 @@ function roll_40k(page) {
 	}
 	if (!test_passed) {
 		document.getElementById('results').style.display = "none";
-		document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+		$('body,html').animate({ scrollTop: 0 }, 800);
         $("a[href='#collapseAttacker'][aria-expanded='false']").click();
 		return;
 	}
@@ -1206,4 +1205,9 @@ const AXIS_LINEAR = 1;
 function AutoToggle(field){
 	document.getElementById(field).value = '';
 	roll_40k($('#' + field).attr('calc-page'));
+}
+
+function btn_roll_40k(page) {
+	roll_40k(page);
+	$('body,html').animate({ scrollTop: document.getElementById('results').offsetTop - 85 }, 800);
 }
