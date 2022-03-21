@@ -1,324 +1,337 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Adeptus Aleacus</title>
-    <link href="./css/dice.css" rel="stylesheet" type="text/css">
-    <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="./css/switchery.min.css" rel="stylesheet" type="text/css">
-    <link href="./css/icons.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="./js/jquery.min.js"></script>
-	<script type="text/javascript" src="./js/popper.min.js"></script>
-	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./js/dice.js"></script>
-    <script type="text/javascript" src="./js/Chart.js"></script>
-    <script type="text/javascript" src="./js/jquery.bootstrap-touchspin.min.js"></script>
-    <script type="text/javascript" src="./js/switchery.min.js"></script>
-	
+		<title>Adeptus Aleacus</title>
+		<link href="./css/dice.css" rel="stylesheet" type="text/css">
+		<link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="./css/switchery.min.css" rel="stylesheet" type="text/css">
+		<link href="./css/all.min.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/popper.min.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/dice.js"></script>
+		<script type="text/javascript" src="./js/chart.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.bootstrap-touchspin.min.js"></script>
+		<script type="text/javascript" src="./js/switchery.min.js"></script>
 
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./img/logo.png">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./img/logo.png">
-    <link rel="icon" type="image/png" href="./img/logo.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="./img/logo.png" sizes="16x16">
-</head>
-<body class="body">
-    <div id="wrapper">
-        <header id="topnav">
-            <div class="navbar-custom">
-                <div class="container-fluid">
-                    <div class="logo-box">
-                            <span class="logo">
-                                <img src="./img/logo.png" alt="" height="50">
-                            </span>
-                    </div>
-                    <ul class="list-unstyled topnav-menu mb-0">
-                        <li class="dropdown app-name">
-							<span class="site-title nav-link mr-0 waves-effect">
-								Adeptus Aleacus
-							</span>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </header>
-        <div class="content-page">
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="card-box">
-                                <a data-toggle="collapse" href="#collapseAttacker" role="button" aria-expanded="true" aria-controls="collapseAttacker" tabindex="-1">
-									<h4 class="header-title collapse-title">Attacker <div class="expand_caret caret"></div></h4>
-								</a>
-								<div class="collapse show" id="collapseAttacker">
-									<div class="form-row">
-										<div class="form-group col-lg-3 col-6">
-											<label for="attacks" class="col-form-label">Attacks</label>
-											<input type="text" class="form-control-sm" calc-page="1" id="attacks" tabindex="1" placeholder="Ex: 4, 2d6, 3+d3">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./img/logo.png">
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="./img/logo.png">
+		<link rel="icon" type="image/png" href="./img/logo.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="./img/logo.png" sizes="16x16">
+	</head>
+	<body class="body">
+		<div id="wrapper">
+			<header id="topnav">
+				<div class="navbar-custom">
+					<div class="container-fluid">
+						<div class="logo-box">
+								<span class="logo">
+									<img src="./img/logo.png" alt="" height="50">
+								</span>
+						</div>
+						<ul class="list-unstyled topnav-menu mb-0">
+							<li class="dropdown app-name">
+								<span class="site-title nav-link mr-0 waves-effect">
+									Adeptus Aleacus
+								</span>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</header>
+			<div class="content-page">
+				<div class="content">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-12">
+								<div class="card-box">
+									<a data-bs-toggle="collapse" href="#collapseAttacker" role="button" aria-expanded="true" aria-controls="collapseAttacker" tabindex="-1">
+										<h4 class="header-title collapse-title"><i class="fa-solid fa-explosion"></i> Attacker <div class="expand_caret caret"></div></h4>
+									</a>
+									<div class="collapse show" id="collapseAttacker">
+										<div class="row">
+											<div class="form-group col-lg-3 col-6">
+												<label for="attacks" class="col-form-label">Attacks</label>
+												<input type="text" class="form-control-sm" calc-page="1" id="attacks" tabindex="1" placeholder="Ex: 4, 2d6, 3+d3">
+											</div>
+											<div class="form-group col-lg-2 col-6">
+												<label for="bs" class="col-form-label">
+													B/W S 
+													<a class="fa-solid fa-question-circle help-icon" tabindex="0" data-bs-toggle="popover" title="Ballistic / Weapon Skill" data-bs-content='By leaving this field empty or by clicking on "Auto-Hit" the tool will skip the hit roll and all the Attacks will automatically hit the target.' tabindex="0"></a> 
+													<a href="javascript:AutoToggle('bs');" class="label-button" tabindex="-1">Auto-Hit</a>
+												</label>
+												<input type="text" class="form-control-sm" calc-page="1" id="bs" tabindex="2" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
+											</div>
+											<div class="form-group col-lg-2 col-6">
+												<label for="s" class="col-form-label">
+													S 
+													<a class="fa-solid fa-question-circle help-icon" tabindex="1" data-bs-toggle="popover" title="Weapon Strenght" data-bs-content='By leaving this field empty or by clicking on "Auto-Wound" the tool will skip the wound roll and all the Hits will automatically wound the target.' tabindex="0"></a> 
+													<a href="javascript:AutoToggle('s');" class="label-button" tabindex="-1">Auto-Wound</a>
+												</label>
+												<input type="text" class="form-control-sm" calc-page="1" id="s" tabindex="3" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="25" spinner-step="1" spinner-firstvalue="1">
+											</div>
+											<div class="form-group col-lg-2 col-6">
+												<label for="ap" class="col-form-label">AP</label>
+												<input type="text" class="form-control-sm" calc-page="1" id="ap" tabindex="4" value="0" is-spinner="true" spinner-min="-10" spinner-max="0" spinner-step="1" spinner-firstvalue="0">
+											</div>
+											<div class="form-group col-lg-3 col-6">
+												<label for="d" class="col-form-label">
+													D
+													<a class="fa-solid fa-question-circle help-icon" tabindex="2" data-bs-toggle="popover" title="Damage" data-bs-content='By leaving this field empty or by clicking on "Wounds Only" the tool will only show how many Hits will wound the target on average.' tabindex="0"></a> 
+													<a href="javascript:AutoToggle('d');" class="label-button" tabindex="-1">Wounds Only</a></label>
+												</label>
+												<input type="text" class="form-control-sm" calc-page="1" id="d" tabindex="5" placeholder="Ex: 2, 2d6, 3+d3">
+											</div>
+											<div class="form-group col-lg-2 col-6">
+												<label for="hit_mod" class="col-form-label">Hit Mod</label>
+												<input type="text" class="form-control-sm" calc-page="1" id="hit_mod" tabindex="6" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
+											</div>
+											<div class="form-group col-lg-4 col-12">
+												<label for="hit_reroll" class="col-form-label">Hit Reroll</label>
+												<select id="hit_reroll" class="form-control-sm" calc-page="1" tabindex="8">
+													<option value="">No hit rolls</option>
+													<option value="1">Hit rolls of 1</option>
+													<option value="fail">Failed hit rolls</option>
+													<option value="-6">[Negative] Hit rolls of 6</option>
+													<option value="-hits">[Negative] All passed hit rolls</option>
+												</select>
+											</div>
+											<div class="form-group col-lg-4 col-12">
+												<label for="hit_of_6" class="col-form-label">Hit rolls of 6</label>
+												<select id="hit_of_6" class="form-control-sm" calc-page="1" tabindex="7">
+													<option value="">Nothing</option>
+													<option value="1roll">1 extra hit roll</option>
+													<option value="1">1 extra hit</option>
+													<option value="2">2 extra hits</option>
+													<option value="autowound">Auto-pass wound roll</option>
+													<option value="+mortal">1 additional mortal wound</option>
+													<option value="mortal">Damage as mortal wounds</option>
+												</select>
+											</div>
 										</div>
-										<div class="form-group col-lg-2 col-6">
-											<label for="bs" class="col-form-label">B/W S 
-												<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Ballistic / Weapon Skill" data-content='By leaving this field empty or by clicking on "Auto-Hit" the tool will skip the hit roll and all the Attacks will automatically hit the target.' tabindex="0"></a> 
-												<a href="javascript:AutoToggle('bs');" class="label-button" tabindex="-1">Auto-Hit</a>
-											</label>
-											<input type="text" class="form-control-sm" calc-page="1" id="bs" tabindex="2" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
-										</div>
-										<div class="form-group col-lg-2 col-6">
-											<label for="s" class="col-form-label">S 
-												<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Weapon Strenght" data-content='By leaving this field empty or by clicking on "Auto-Wound" the tool will skip the wound roll and all the Hits will automatically wound the target.' tabindex="0"></a> 
-												<a href="javascript:AutoToggle('s');" class="label-button" tabindex="-1">Auto-Wound</a>
-											</label>
-											<input type="text" class="form-control-sm" calc-page="1" id="s" tabindex="3" placeholder="Auto" is-spinner="true" spinner-min="1" spinner-max="25" spinner-step="1" spinner-firstvalue="1">
-										</div>
-										<div class="form-group col-lg-2 col-6">
-											<label for="ap" class="col-form-label">AP</label>
-											<input type="text" class="form-control-sm" calc-page="1" id="ap" tabindex="4" value="0" is-spinner="true" spinner-min="-10" spinner-max="0" spinner-step="1" spinner-firstvalue="0">
-										</div>
-										<div class="form-group col-lg-3 col-6">
-											<label for="d" class="col-form-label">D
-												<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Damage" data-content='By leaving this field empty or by clicking on "Wounds Only" the tool will only show how many Hits will wound the target on average.' tabindex="0"></a> 
-												<a href="javascript:AutoToggle('d');" class="label-button" tabindex="-1">Wounds Only</a></label>
-											</label>
-											<input type="text" class="form-control-sm" calc-page="1" id="d" tabindex="5" placeholder="Ex: 2, 2d6, 3+d3">
-										</div>
-										<div class="form-group col-lg-2 col-6">
-											<label for="hit_mod" class="col-form-label">Hit Mod</label>
-											<input type="text" class="form-control-sm" calc-page="1" id="hit_mod" tabindex="6" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
-										</div>
-										<div class="form-group col-lg-4 col-12">
-											<label for="hit_reroll" class="col-form-label">Hit Reroll</label>
-											<select id="hit_reroll" class="form-control-sm" calc-page="1" tabindex="8">
-												<option value="">No hit rolls</option>
-												<option value="1">Hit rolls of 1</option>
-												<option value="fail">Failed hit rolls</option>
-												<option value="-6">[Negative] Hit rolls of 6</option>
-												<option value="-hits">[Negative] All passed hit rolls</option>
-											</select>
-										</div>
-										<div class="form-group col-lg-4 col-12">
-											<label for="hit_of_6" class="col-form-label">Hit rolls of 6</label>
-											<select id="hit_of_6" class="form-control-sm" calc-page="1" tabindex="7">
-												<option value="">Nothing</option>
-												<option value="1roll">1 extra hit roll</option>
-												<option value="1">1 extra hit</option>
-												<option value="2">2 extra hits</option>
-												<option value="autowound">Auto-pass wound roll</option>
-												<option value="+mortal">1 additional mortal wound</option>
-												<option value="mortal">Damage as mortal wounds</option>
-											</select>
+										<div class="row">
+											<div class="form-group col-lg-2 col-6">
+												<label for="wound_mod" class="col-form-label">Wounds Mod</label>
+												<input type="text" class="form-control-sm" calc-page="1" id="wound_mod" tabindex="9" placeholder="Ex: 4, 2d6" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
+											</div>
+											<div class="form-group col-lg-4 col-12">
+												<label for="wound_reroll" class="col-form-label">Wounds Reroll</label>
+												<select id="wound_reroll" class="form-control-sm" calc-page="1" tabindex="11">
+													<option value="">No wound rolls</option>
+													<option value="1">Wound rolls of 1</option>
+													<option value="fail">Failed wound rolls</option>
+													<option value="-6">[Negative] Wound rolls of 6</option>
+													<option value="-wounds">[Negative] All passed wound rolls</option>
+												</select>
+											</div>
+											<div class="form-group col-lg-4 col-12">
+												<label for="wound_of_6" class="col-form-label">Wound rolls of 6</label>
+												<select id="wound_of_6" class="form-control-sm" calc-page="1" tabindex="10">
+													<option value="">Nothing</option>
+													<option value="-1">Extra -1 AP</option>
+													<option value="-3">Extra -3 AP</option>
+													<option value="-4">Extra -4 AP</option>
+													<option value="+mortal">1 extra mortal wound</option>
+													<option value="mortal">Damage as mortal wounds</option>
+												</select>
+											</div>
 										</div>
 									</div>
-									<div class="form-row">
-                                    <div class="form-group col-lg-2 col-6">
-                                        <label for="wound_mod" class="col-form-label">Wounds Mod</label>
-                                        <input type="text" class="form-control-sm" calc-page="1" id="wound_mod" tabindex="9" placeholder="Ex: 4, 2d6" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
-                                    </div>
-									<div class="form-group col-lg-4 col-12">
-                                        <label for="wound_reroll" class="col-form-label">Wounds Reroll</label>
-                                        <select id="wound_reroll" class="form-control-sm" calc-page="1" tabindex="11">
-                                            <option value="">No wound rolls</option>
-                                            <option value="1">Wound rolls of 1</option>
-                                            <option value="fail">Failed wound rolls</option>
-											<option value="-6">[Negative] Wound rolls of 6</option>
-											<option value="-wounds">[Negative] All passed wound rolls</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-lg-4 col-12">
-                                        <label for="wound_of_6" class="col-form-label">Wound rolls of 6</label>
-                                        <select id="wound_of_6" class="form-control-sm" calc-page="1" tabindex="10">
-                                            <option value="">Nothing</option>
-                                            <option value="-1">Extra -1 AP</option>
-                                            <option value="-3">Extra -3 AP</option>
-                                            <option value="-4">Extra -4 AP</option>
-                                            <option value="+mortal">1 extra mortal wound</option>
-                                            <option value="mortal">Damage as mortal wounds</option>
-                                        </select>
-                                    </div>
-                                </div>
 								</div>
 							</div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-							<div class="row">
-								<div class="col-12">
-									<div class="card-box">
-										<a data-toggle="collapse" href="#collapseDefender" role="button" aria-expanded="true" aria-controls="collapseAttacker" tabindex="-1">
-											<h4 class="header-title collapse-title">Defender <div class="expand_caret caret"></div></h4>
-										</a>
-										<div class="collapse show" id="collapseDefender">
-											<div class="form-row">
-												<div class="form-group col-lg-2 col-6">
-													<label for="t" class="col-form-label">
-														T
-														<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Weapon Strenght" data-content='By leaving this field empty or by clicking on "Auto-Wound" the tool will skip the wound roll and all the Hits will automatically wound the target.' tabindex="0"></a>
-														<a href="javascript:AutoToggle('t');" class="label-button" tabindex="-1">Auto-Wound</a>
-													</label>
-													<input type="text" class="form-control-sm" calc-page="1" id="t" tabindex="12" placeholder="Ex: 4" value="4" is-spinner="true" spinner-min="1" spinner-max="15" spinner-step="1" spinner-firstvalue="4">
-												</div>
-												<div class="form-group col-lg-2 col-6">
-													<label for="save" class="col-form-label">
-														Save
-														<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Save" data-content='By leaving this field empty or by clicking on "Auto-Fail" the tool will skip the save roll and all the Wounds will be automatically applied to the target.<br/><i>Please be aware that, if enabled, the invlunerable save roll will still be taken into consideration.</i><br/><br/>If the combined stats of AP and Save makes the roll worse than the Invulnerable Save, this roll will be skipped.' tabindex="0"></a>
-														<a href="javascript:AutoToggle('save');" class="label-button" tabindex="-1">Auto-Fail</a>
-													</label>
-													<input type="text" class="form-control-sm" calc-page="1" id="save" tabindex="13" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="3">
-												</div>
-												<div class="form-group col-lg-2 col-6">
-													<label for="invulnerable" class="col-form-label">
-														Invuln
-														<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Invulnerable Save" data-content='By leaving this field empty or by clicking on "No Save" the tool will skip the invulnerable save roll and all the Wounds will be automatically applied to the target accordingly.<br><i>Please be aware that the save roll, if enabled, will still be taken into consideration.</i><br/><br/>If the combined stats of AP and Save makes the roll better than the Invulnerable Save, this roll will be skipped.' tabindex="0"></a>
-														<a href="javascript:AutoToggle('invulnerable');" class="label-button" tabindex="-1">No Save</a>
-													</label>
-													<input type="text" class="form-control-sm" calc-page="1" id="invulnerable" tabindex="14" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
-												</div>
-												<div class="form-group col-lg-2 col-6">
-													<label for="wounds" class="col-form-label">
-														W
-														<a class="fas fa-question-circle help-icon" data-toggle="popover" title="Wounds per Model" data-content='By leaving this field empty or by clicking on "No Wounds" the tool will not show how many models would be killed on average.' tabindex="0"></a>
-														<a href="javascript:AutoToggle('wounds');" class="label-button" tabindex="-1">No Wounds</a>
-													</label>
-													<input type="text" class="form-control-sm" calc-page="1" id="wounds" tabindex="15" placeholder="-" value="1" is-spinner="true" spinner-min="1" spinner-max="50" spinner-step="1" spinner-firstvalue="1">
-												</div>
-											</div>
-											<div class="form-row">
-												<div class="form-group col-lg-2 col-6">
-													<label for="save_mod" class="col-form-label">Save Mod</label>
-													<input type="text" class="form-control-sm" calc-page="1" id="save_mod" tabindex="16" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
-												</div>
-												<div class="form-group col-lg-2 col-6">
-													<label for="cover" class="col-form-label">Light Cover</label>
-													<div style="width: 100%; padding-top: 7px;">
-														<input type="checkbox" id="cover" calc-page="1" tabindex="17" value="0" class="js-switch">
+							<div class="col-lg-6 col-md-6 col-12">
+								<div class="row">
+									<div class="col-12">
+										<div class="card-box">
+											<a data-bs-toggle="collapse" href="#collapseDefender" role="button" aria-expanded="true" aria-controls="collapseAttacker" tabindex="-1">
+												<h4 class="header-title collapse-title"><i class="fa-solid fa-shield"></i> Defender <div class="expand_caret caret"></div></h4>
+											</a>
+											<div class="collapse show" id="collapseDefender">
+												<div class="row">
+													<div class="form-group col-lg-2 col-6">
+														<label for="t" class="col-form-label">
+															T
+															<a class="fa-solid fa-question-circle help-icon" tabindex="3" data-bs-toggle="popover" title="Weapon Strenght" data-bs-content='By leaving this field empty or by clicking on "Auto-Wound" the tool will skip the wound roll and all the Hits will automatically wound the target.' tabindex="0"></a>
+															<a href="javascript:AutoToggle('t');" class="label-button" tabindex="-1">Auto-Wound</a>
+														</label>
+														<input type="text" class="form-control-sm" calc-page="1" id="t" tabindex="12" placeholder="Ex: 4" value="4" is-spinner="true" spinner-min="1" spinner-max="15" spinner-step="1" spinner-firstvalue="4">
+													</div>
+													<div class="form-group col-lg-2 col-6">
+														<label for="save" class="col-form-label">
+															Save
+															<a class="fa-solid fa-question-circle help-icon" tabindex="4" data-bs-toggle="popover" title="Save" data-bs-content='By leaving this field empty or by clicking on "Auto-Fail" the tool will skip the save roll and all the Wounds will be automatically applied to the target.<br/><i>Please be aware that, if enabled, the invlunerable save roll will still be taken into consideration.</i><br/><br/>If the combined stats of AP and Save makes the roll worse than the Invulnerable Save, this roll will be skipped.' tabindex="0"></a>
+															<a href="javascript:AutoToggle('save');" class="label-button" tabindex="-1">Auto-Fail</a>
+														</label>
+														<input type="text" class="form-control-sm" calc-page="1" id="save" tabindex="13" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="3">
+													</div>
+													<div class="form-group col-lg-2 col-6">
+														<label for="invulnerable" class="col-form-label">
+															Invuln
+															<a class="fa-solid fa-question-circle help-icon" tabindex="5" data-bs-toggle="popover" title="Invulnerable Save" data-bs-content='By leaving this field empty or by clicking on "No Save" the tool will skip the invulnerable save roll and all the Wounds will be automatically applied to the target accordingly.<br><i>Please be aware that the save roll, if enabled, will still be taken into consideration.</i><br/><br/>If the combined stats of AP and Save makes the roll better than the Invulnerable Save, this roll will be skipped.' tabindex="0"></a>
+															<a href="javascript:AutoToggle('invulnerable');" class="label-button" tabindex="-1">No Save</a>
+														</label>
+														<input type="text" class="form-control-sm" calc-page="1" id="invulnerable" tabindex="14" placeholder="-" is-spinner="true" spinner-min="1" spinner-max="6" spinner-step="1" spinner-firstvalue="1">
+													</div>
+													<div class="form-group col-lg-2 col-6">
+														<label for="wounds" class="col-form-label">
+															W
+															<a class="fa-solid fa-question-circle help-icon" tabindex="6" data-bs-toggle="popover" title="Wounds per Model" data-bs-content='By leaving this field empty or by clicking on "No Wounds" the tool will not show how many models would be killed on average.' tabindex="0"></a>
+															<a href="javascript:AutoToggle('wounds');" class="label-button" tabindex="-1">No Wounds</a>
+														</label>
+														<input type="text" class="form-control-sm" calc-page="1" id="wounds" tabindex="15" placeholder="-" value="1" is-spinner="true" spinner-min="1" spinner-max="50" spinner-step="1" spinner-firstvalue="1">
 													</div>
 												</div>
-												<div class="form-group col-lg-4 col-12">
-													<label for="save_reroll" class="col-form-label">Save Reroll</label>
-													<select id="save_reroll" class="form-control-sm" calc-page="1" tabindex="18">
-														<option value="">No save rolls</option>
-														<option value="1">Any save rolls of 1</option>
-														<option value="fail">Any failed save rolls</option>
-														<option value="inv_1">Invulnerable save rolls of 1</option>
-														<option value="inv_fail">Failed invulnerable save rolls</option>
-														<option value="-6">[Negative] Save rolls of 6</option>
-														<option value="-save">[Negative] All save rolls</option>
-														<option value="-6_inv">[Negative] Inv rolls of 6</option>
-														<option value="-inv">[Negative] All passed inv rolls</option>
-													</select>
-												</div>
-												<div class="form-group col-lg-4">
-													<label for="shake" class="col-form-label">Feel No Pain</label>
-													<select id="shake" class="form-control-sm" calc-page="1" tabindex="19">
-														<option value="">Never</option>
-														<option value="6">On a roll of 6</option>
-														<option value="56">On a roll of 5 or 6</option>
-														<option value="quantum">Roll under the damage value</option>
-													</select>
+												<div class="row">
+													<div class="form-group col-lg-2 col-6">
+														<label for="save_mod" class="col-form-label">Save Mod</label>
+														<input type="text" class="form-control-sm" calc-page="1" id="save_mod" tabindex="16" placeholder="Ex: 1, -2" value="0" is-spinner="true" spinner-min="-10" spinner-max="10" spinner-step="1" spinner-firstvalue="0">
+													</div>
+													<div class="form-group col-lg-2 col-6">
+														<label for="cover" class="col-form-label">Light Cover</label>
+														<div style="width: 100%; padding-top: 7px;">
+															<input type="checkbox" id="cover" calc-page="1" tabindex="17" value="0" class="js-switch">
+														</div>
+													</div>
+													<div class="form-group col-lg-4 col-12">
+														<label for="save_reroll" class="col-form-label">Save Reroll</label>
+														<select id="save_reroll" class="form-control-sm" calc-page="1" tabindex="18">
+															<option value="">No save rolls</option>
+															<option value="1">Any save rolls of 1</option>
+															<option value="fail">Any failed save rolls</option>
+															<option value="inv_1">Invulnerable save rolls of 1</option>
+															<option value="inv_fail">Failed invulnerable save rolls</option>
+															<option value="-6">[Negative] Save rolls of 6</option>
+															<option value="-save">[Negative] All save rolls</option>
+															<option value="-6_inv">[Negative] Inv rolls of 6</option>
+															<option value="-inv">[Negative] All passed inv rolls</option>
+														</select>
+													</div>
+													<div class="form-group col-lg-4">
+														<label for="shake" class="col-form-label">Feel No Pain</label>
+														<select id="shake" class="form-control-sm" calc-page="1" tabindex="19">
+															<option value="">Never</option>
+															<option value="6">On a roll of 6</option>
+															<option value="56">On a roll of 5 or 6</option>
+															<option value="quantum">Roll under the damage value</option>
+														</select>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-12" style="padding-bottom: 25px">
-									<button type="button" class="btn btn-block btn-primary waves-effect waves-light" calc-page="1" onclick="btn_roll_40k($(this).attr('calc-page'));" tabindex="20">
-										<i class="fas fa-dice mr-1"></i>
-										<span>Roll</span>
-									</button>
+								<div class="row">
+									<div class="d-grid col-12" style="padding-bottom: 25px">
+										<button type="button" class="btn btn-block btn-primary waves-effect waves-light" calc-page="1" onclick="btn_roll_40k($(this).attr('calc-page'));" tabindex="20">
+											<i class="fa-solid fa-dice mr-1"></i>
+											<span>Roll</span>
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
-                    </div>
-                    <div class="row" id="results" style="display: none;">
-                        <div class="col-12">
-                            <div class="card-box">
-                                <h4 class="header-title mt-0 mb-4">Results</h4>
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-4 col-6">
-                                        <canvas id="attack_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
-                                        <p class="text-muted font-14 mb-3" id="attack_text"></p>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-6">
-                                        <canvas id="hit_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
-                                        <p class="text-muted font-14 mb-3" id="hit_text"></p>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-6">
-                                        <canvas id="wound_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
-                                        <p class="text-muted font-14 mb-3" id="wound_text"></p>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-6">
-                                        <canvas id="unsaved_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
-                                        <p class="text-muted font-14 mb-3" id="unsaved_text"></p>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-6">
-                                        <canvas id="damage_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
-                                        <p class="text-muted font-14 mb-3" id="damage_text"></p>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-6">
-                                        <canvas id="killed_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
-                                        <p class="text-muted font-14 mb-3" id="killed_text"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+						<div class="row" id="results" style="display: none;">
+							<div class="col-12">
+								<div class="card-box">
+									<a data-bs-toggle="collapse" href="#collapseResults" role="button" aria-expanded="true" aria-controls="collapseResults" tabindex="-1">
+										<h4 class="header-title collapse-title"><i class="fa-solid fa-chart-column"></i> Results <div class="expand_caret caret"></div></h4>
+									</a>
+									<div class="collapse show" id="collapseResults">
+										<div class="row">
+											<div class="col-lg-2 col-md-4 col-6">
+												<label><i class="fa-solid fa-rocket"></i> <span id="attack_title"></span></label>
+												<canvas id="attack_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
+												<p class="font-14 mb-3" id="attack_text"></p>
+											</div>
+											<div class="col-lg-2 col-md-4 col-6">
+												<label><i class="fa-solid fa-explosion"></i> <span id="hit_title"></span></label>
+												<canvas id="hit_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
+												<p class="font-14 mb-3" id="hit_text"></p>
+											</div>
+											<div class="col-lg-2 col-md-4 col-6">
+												<label><i class="fa-solid fa-bandage"></i> <span id="wound_title"></span></label>
+												<canvas id="wound_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
+												<p class="font-14 mb-3" id="wound_text"></p>
+											</div>
+											<div class="col-lg-2 col-md-4 col-6">
+												<label><i class="fa-solid fa-shield"></i> <span id="unsaved_title"></span></label>
+												<canvas id="unsaved_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
+												<p class="font-14 mb-3" id="unsaved_text"></p>
+											</div>
+											<div class="col-lg-2 col-md-4 col-6">
+												<label><i class="fa-solid fa-heart-crack"></i> <span id="damage_title"></span></label>
+												<canvas id="damage_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
+												<p class="font-14 mb-3" id="damage_text"></p>
+											</div>
+											<div class="col-lg-2 col-md-4 col-6">
+												<div class="form-group">
+													<label><i class="fa-solid fa-skull"></i> <span id="killed_title"></span></label>
+													<canvas id="killed_chart" width="200" height="200" style="display: block; width: 200px; height: 200px;"></canvas>
+													<p class="font-14 mb-3" id="killed_text"></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <a href="https://www.games-workshop.com/Warhammer-40-000" target="_blank" tabindex="-1">Warhammer 40000</a> is © Games Workshop Limited.<br>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="text-md-right footer-links" target="_blank" tabindex="-1">
-                        <a href="https://github.com/nyirsh/Warhammer-40Dice/issues/new" target="_blank" tabindex="-1">Report an Issue</a>
-                        <a href="https://github.com/nyirsh/Warhammer-40Dice/wiki" target="_blank" tabindex="-1">Help</a>
-                        <a href="https://www.linkedin.com/in/davide-nyirsh-villa/" target="_blank" tabindex="-1">About Me</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-6 col-md-6">
+						<a href="https://www.games-workshop.com/Warhammer-40-000" target="_blank" tabindex="-1">Warhammer 40000</a> is © Games Workshop Limited.<br>
+					</div>
+					<div class="col-lg-6 col-md-6">
+						<div class="text-md-right footer-links" target="_blank" tabindex="-1">
+							<a href="https://github.com/nyirsh/Warhammer-40Dice/issues/new" target="_blank" tabindex="-1">Report an Issue</a>
+							<a href="https://github.com/nyirsh/Warhammer-40Dice/wiki" target="_blank" tabindex="-1">Help</a>
+							<a href="https://www.linkedin.com/in/davide-nyirsh-villa/" target="_blank" tabindex="-1">About Me</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-    <script>
-        init_40k('1');
+		<script>
+			init_40k('1');
 
-        $("input[is-spinner='true']").each(function() {
-			var spinmin = parseInt($(this).attr('spinner-min'));
-			var spinmax = parseInt($(this).attr('spinner-max'));
-			var spinstep = parseInt($(this).attr('spinner-step'));
-			var spinfirst = parseInt($(this).attr('spinner-firstvalue'));
-			$(this).TouchSpin({
-				min: spinmin,
-				max: spinmax,
-				step: spinstep,
-				firstclickvalueifempty: spinfirst,
-				buttondown_class: "btn btn-sm btn-primary",
-				buttonup_class: "btn btn-sm btn-primary"
+			$("input[is-spinner='true']").each(function() {
+				var spinmin = parseInt($(this).attr('spinner-min'));
+				var spinmax = parseInt($(this).attr('spinner-max'));
+				var spinstep = parseInt($(this).attr('spinner-step'));
+				var spinfirst = parseInt($(this).attr('spinner-firstvalue'));
+				$(this).TouchSpin({
+					min: spinmin,
+					max: spinmax,
+					step: spinstep,
+					firstclickvalueifempty: spinfirst,
+					buttondown_class: "btn btn-sm btn-primary",
+					buttonup_class: "btn btn-sm btn-primary"
+				});
 			});
-		});
 
-        var elems = document.querySelectorAll('.js-switch');
-        for (var i = 0; i < elems.length; i++) {
-            var switchery = new Switchery(elems[i], { size: 'small', color: '#71b6f9', secondaryColor: '#3a4250' });
-        }
-		
-		$("[data-toggle='popover']").each(function() {
-			$(this).popover({
-				html: true,
-				trigger: 'focus'
-			});
-		});
-		
-		$("input[calc-page]").change(function() { roll_40k($(this).attr('calc-page')); });
-		$("select[calc-page]").change(function() { roll_40k($(this).attr('calc-page')); });
-    </script>
-</body>
+			var elems = document.querySelectorAll('.js-switch');
+			for (var i = 0; i < elems.length; i++) {
+				var switchery = new Switchery(elems[i], { size: 'small', color: '#71b6f9', secondaryColor: '#3a4250' });
+			}
+			
+			var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+			var popoverList = popoverTriggerList.map(
+				function (popoverTriggerEl) {
+				return new bootstrap.Popover(popoverTriggerEl, { html: true, trigger: 'hover focus', container: 'body' });
+				});
+			
+			$("input[calc-page]").change(function() { roll_40k($(this).attr('calc-page')); });
+			$("select[calc-page]").change(function() { roll_40k($(this).attr('calc-page')); });
+		</script>
+	</body>
 </html>
